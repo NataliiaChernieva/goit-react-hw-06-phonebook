@@ -15,9 +15,9 @@ export default function App() {
   );
   const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    localStorage.setItem('contactList', JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   localStorage.setItem('contactList', JSON.stringify(contacts));
+  // }, [contacts]);
 
   // const formSubmitHandle = ({ name, number }) => {
   //   const contact = { name, number, id: uuidv4() };
@@ -34,10 +34,10 @@ export default function App() {
     setFilter(e.target.value);
   };
 
-  const normaliseFilter = filter.toLowerCase();
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(normaliseFilter),
-  );
+  // const normaliseFilter = filter.toLowerCase();
+  // const filteredContacts = contacts.filter(contact =>
+  //   contact.name.toLowerCase().includes(normaliseFilter),
+  // );
 
   return (
     <Container>
@@ -52,7 +52,7 @@ export default function App() {
           onChange={changeFilter}
         />
       )}
-      <ContactList contacts={filteredContacts}/>
+      <ContactList/>
     </Container>
   );
 }

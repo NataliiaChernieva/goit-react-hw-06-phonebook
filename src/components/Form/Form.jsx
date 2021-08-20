@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { CustomForm } from './Form.styled';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/actions/items';
-import { v4 as uuidv4 } from 'uuid';
+// import { addContact } from '../../redux/actions/items'; //без Toolkit i Slice
+import {addContact} from '../../redux/slices/items.js';
 
 export default function Form() {
   const [name, setName] = useState('');
