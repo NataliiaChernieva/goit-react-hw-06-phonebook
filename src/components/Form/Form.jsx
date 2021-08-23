@@ -33,8 +33,6 @@ export default function Form() {
     e.preventDefault();
     const id = uuidv4();
     dispatch(addContact({ name, number, id }));
-
-    // handleSubmit({ name, number });
     reset();
   };
 

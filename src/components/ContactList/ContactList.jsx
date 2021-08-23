@@ -4,25 +4,25 @@ import { useEffect } from 'react';
 
 export default function ContactList() {
   const contacts = useSelector((state) => state.items);
-  // console.log(`contacts`, contacts);
+  const filterValue = useSelector((state) => state.filter);
+  // console.log(`filter`, filterValue)
 
   useEffect(() => {
     localStorage.setItem('contactList', JSON.stringify(contacts));
   }, [contacts]);
 
-  // const normaliseFilter = filter.toLowerCase();
-  // const filteredContacts = contacts.filter(contact =>
-  //   contact.name.toLowerCase().includes(normaliseFilter),
-  // );
+  
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filterValue),
+  );
   
   return (
     <ul>
-      {contacts.map(({ id, name, number }) => (
+      {filteredContacts.map(({ id, name, number }) => (
         <ContactListItem
           key={id}
           name={name}
           number={number}
-          // handleDelete={() => onDeleteContact(id)}
         />
       ))}
     </ul>
