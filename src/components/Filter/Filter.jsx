@@ -12,9 +12,9 @@ export default function Filter() {
      
     return (
       <Input
-          name="Find contacts by name"
-          type="text"
-          onChange={changeFilter}
-        />
+        name="Find contacts by name"
+        type="text"
+        onChange={changeFilter}
+      />
  )
  }
